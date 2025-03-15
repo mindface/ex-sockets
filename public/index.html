@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シンプルチャットアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="room-header">
+        <h2>ルーム一覧</h2>
+      </div>
+      <div class="room-list" id="room-list">
+        <!-- ルーム一覧がここに表示される -->
+      </div>
+      <div class="create-room-form" id="create-room-form" >
+        <h3>新規ルーム作成</h3>
+        <input type="text" id="room-name" placeholder="ルーム名">
+        <input type="text" id="room-description" placeholder="ルームの説明 (省略可)">
+        <div class="form-buttons">
+          <button id="create-room-button">ルーム作成</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <p id="current-room-title"></p>
+        <h1 id="current-room-name">ルームを選択してください</h1>
+      </div>
+      <div class="chat-messages" id="message-container">
+        <!-- メッセージがここに表示される -->
+      </div>
+      <div class="typing-indicator" id="typing-indicator"></div>
+      <div class="chat-form">
+        <input type="text" id="username" placeholder="ユーザー名" value="ユーザー">
+        <input type="text" id="message-input" placeholder="メッセージを入力..." disabled>
+        <button id="send-button" disabled>送信</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
